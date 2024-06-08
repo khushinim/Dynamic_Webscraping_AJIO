@@ -3,11 +3,10 @@
 # and stores the data in a structured format like a CSV file.
 
 # first we need to install the required libraries
-# pip install selenium==4.0.0.b4    for infinite scrolling as we are scraping form AJIO
+# pip install requests   -we use this when scraping from a static webpage but in our case we will not use this as we are handelling dynamic webpage
+# pip install selenium==4.0.0.b4    -for infinite scrolling of AJIO
 # pip install pandas
-# pip install requests
-# pip install beautifulsoup4 lxml
-# lxml is parser for beautifulsoup4
+# pip install beautifulsoup4 lxml   -lxml is parser for beautifulsoup4
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -71,3 +70,5 @@ print(df)
 
 # datafram to csv file
 df.to_csv('ajio_products.csv', index=False)
+
+print("Successfully scraped data and converted it to CSV File.")
